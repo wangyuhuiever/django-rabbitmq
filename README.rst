@@ -7,11 +7,11 @@ Start a RabbitMQ consumer after django server start.
 Quick start
 -----------
 
-1. Add "django-mq" to your INSTALLED_APPS setting like this::
+1. Add "django-rabbitmq" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
-        'django-mq',
+        'django-rabbitmq',
     ]
 
 2. Config rabbitmq settings like this::
@@ -29,12 +29,12 @@ Quick start
 
 3. Create a mq.py and inherit RabbitMQ model::
 
-    from django-mq.mq import RabbitMQ
+    from django-rabbitmq.mq import RabbitMQ
 
     class CustomModel(RabbitMQ):
 
         def callback(ch, method, properties, body):
-            print("[django-mq] Received %r" % body)
+            print("[django-rabbitmq] Received %r" % body)
             ......
             your code
             ......

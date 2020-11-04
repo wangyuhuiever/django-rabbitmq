@@ -15,10 +15,10 @@ class RabbitMQ():
 
         channel.basic_consume(queue=queue, on_message_callback=self.callback, auto_ack=True)
 
-        print('[django-mq] Waiting for messages. To exit press CTRL+C')
+        print('[django-rabbitmq] Waiting for messages. To exit press CTRL+C')
         channel.start_consuming()
 
     @staticmethod
     def callback(ch, method, properties, body):
-        print("[django-mq] Received %r" % body)
+        print("[django-rabbitmq] Received %r" % body)
 
