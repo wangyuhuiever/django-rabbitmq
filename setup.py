@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="django-rabbitmq",
-    version="0.0.1",
+    version="0.1.0",
     author="Yuhui Wang",
     author_email="wangyuhuiever@163.com",
     description="Start a RabbitMQ consumer after django server start.",
