@@ -1,4 +1,3 @@
-===========================
 Django RabbitMQ Integration
 ===========================
 
@@ -39,6 +38,7 @@ Quick start
             ......
             your code
             ......
+
 
     RabbitMQ.callback = CustomModel.callback
 
