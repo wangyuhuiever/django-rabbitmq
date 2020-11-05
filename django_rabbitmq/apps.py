@@ -4,7 +4,7 @@ from threading import Thread
 
 
 class DjangoMqConfig(AppConfig):
-    name = 'django-rabbitmq'
+    name = 'django_rabbitmq'
 
     def ready(self):
         thr = Thread(name='mq_thread', target=self.run_mq)

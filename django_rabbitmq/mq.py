@@ -2,7 +2,7 @@
 import pika
 
 
-class RabbitMQ():
+class RabbitMQ(object):
 
     def __init__(self, host, port, virtual_host, user, password):
         credentials = pika.PlainCredentials(user, password)

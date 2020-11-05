@@ -11,7 +11,7 @@ Quick start
 
     INSTALLED_APPS = [
         ...
-        'django-rabbitmq',
+        'django_rabbitmq',
     ]
 
 2. Config rabbitmq settings like this::
@@ -29,13 +29,17 @@ Quick start
 
 3. Create a mq.py and inherit RabbitMQ model::
 
-    from django-rabbitmq.mq import RabbitMQ
+    from django_rabbitmq.mq import RabbitMQ
+
 
     class CustomModel(RabbitMQ):
 
-        def callback(ch, method, properties, body):
+        def callback(self, ch, method, properties, body):
             print("[django-rabbitmq] Received %r" % body)
             ......
             your code
             ......
+
+    RabbitMQ.callback = CustomModel.callback
+
 
